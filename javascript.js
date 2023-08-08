@@ -8,11 +8,13 @@ function grid(number){
     let amount = number*number;
     for(let i = 0; i<amount;i++){
         let square = document.createElement("div"); 
-        let color = document.getElementById("colorpicker");  
+        let color = document.getElementById("colorpicker"); 
+        let eraseButton = document.querySelector(".eraser");
+        eraseButton.addEventListener("click", () => color.value = "#FFFFFF")
         square.addEventListener("mouseover", function(){  
             square.style.backgroundColor = color.value;
         });
-       
+      
     
         board.insertAdjacentElement("beforeend", square);
         square.style.border = "1px black solid";
@@ -41,7 +43,7 @@ function clear(x){
 
 function eraser(x){
     let eraseButton = document.querySelector(".eraser");
-    eraseButton.addEventListener("click", () => x = "white")
+    eraseButton.addEventListener("click", () => x = "#FFFFFF")
 }
 
 
