@@ -46,11 +46,14 @@ function eraser(x){
     eraseButton.addEventListener("click", () => x = "#FFFFFF")
 }
 
-
-let color = document.getElementById("colorpicker");
-color.oninput = () => console.log(color.value);
-
-
+function randomColor(){
+    let huruf = "0123456789ABCDEF";
+    let warna = "#";
+    for (let i = 0; i < 6; i++) {
+        warna += huruf[Math.floor(Math.random() * 16)];
+      }
+    return warna;
+}
 
 slider();
-console.log(resetButton);
+console.log(randomColor());
